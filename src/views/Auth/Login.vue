@@ -55,27 +55,36 @@
                         <h5 class="mb-0">Welcome!</h5>
                         <p class="text-muted mt-2">Sign in to continue.</p>
                       </div>
-                      <form class="mt-4 pt-2">
+                      <vee-form
+                        :validation-schema="schema"
+                        @submit="login"
+                        class="mt-4 pt-2"
+                      >
                         <div class="form-floating form-floating-custom mb-3">
-                          <input
-                            type="text"
+                          <vee-field
+                            type="email"
                             class="form-control"
                             id="input-username"
-                            placeholder="Enter User Name"
+                            name="email"
+                            v-model="loginForm.email"
+                            placeholder="Enter Email Address"
                           />
-                          <label for="input-username">Username</label>
+                          <label for="input-username">Email</label>
                           <div class="form-floating-icon">
                             <i class="uil uil-users-alt"></i>
                           </div>
+                          <ErrorMessage class="text-danger" name="email" />
                         </div>
                         <div
                           class="form-floating form-floating-custom mb-3 auth-pass-inputgroup"
                         >
-                          <input
+                          <vee-field
                             type="password"
                             class="form-control"
                             id="password-input"
+                            name="password"
                             placeholder="Enter Password"
+                            v-model="loginForm.password"
                           />
                           <button
                             type="button"
@@ -88,24 +97,21 @@
                           </button>
                           <label for="password-input">Password</label>
                           <div class="form-floating-icon">
+                            <ErrorMessage class="text-danger" name="password" />
                             <i class="uil uil-padlock"></i>
                           </div>
                         </div>
+
                         <div
                           class="form-check form-check-primary font-size-16 py-1"
                         >
-                          <input
+                          <vee-field
                             class="form-check-input"
                             type="checkbox"
                             id="remember-check"
+                            name="remember"
+                            value="true"
                           />
-                          <div class="float-end">
-                            <a
-                              href="auth-resetpassword-basic.html"
-                              class="text-muted text-decoration-underline font-size-14"
-                              >Forgot your password?</a
-                            >
-                          </div>
                           <label
                             class="form-check-label font-size-14"
                             for="remember-check"
@@ -119,7 +125,7 @@
                             Log In
                           </button>
                         </div>
-                      </form>
+                      </vee-form>
                       <!-- end form -->
                     </div>
                   </div>
@@ -138,24 +144,48 @@
 </template>
 
 <script setup>
-/* All Libraries Imports */
-import { ref, reactive } from "vue";
-import { useAuthStore } from "@/store/auth";
+/* All Library Import */
+import { useAuthStore } from "@/stores/auth";
+import { ref, reactive, inject } from "vue";
 import { useRouter } from "vue-router";
 
 /* All Instance */
-const router = useRouter();
+const swal = inject("$swal");
 const authStore = useAuthStore();
+const router = useRouter();
 
-/* All Variables */
-const LoginForm = reactive({
-  email: "",
-  password: "",
+/* All Variable */
+const loginForm = reactive({
+  email: null,
+  password: null,
 });
 
-/* All Methods */
+const schema = reactive({
+  email: "required|email",
+  password: "required|min:4|max:25",
+});
+
+/* Methods */
 const login = () => {
-  //   console.log("Login");
+  authStore.login(loginForm, (status) => {
+    if (status == "success") {
+      swal({
+        icon: "success",
+        timer: 1000,
+        title: authStore.message,
+      });
+      router.push({ name: "dashboard" });
+      document.body.setAttribute("data-layout", "horizontal"); // Set data-layout attribute to default
+    } else {
+      swal({
+        icon: "error",
+        timer: 1000,
+        title: authStore.message,
+      });
+      router.push({ name: "login" });
+      document.body.setAttribute("data-layout", ""); // Set data-layout attribute to empty string
+    }
+  });
 };
 
 /* Hooks and Computed */

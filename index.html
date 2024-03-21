@@ -29,8 +29,7 @@
       type="text/css"
     />
   </head>
-  <!-- <body data-layout="horizontal" data-topbar="dark"> -->
-  <body>
+  <body data-layout="horizontal" data-topbar="dark">
     <div id="app"></div>
     <!-- JAVASCRIPT -->
     <script src="src/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -42,17 +41,12 @@
     <script src="src/assets/js/pages/dashboard.init.js"></script>
 
     <script src="src/assets/js/app.js"></script>
+    <script type="module" src="/src/main.js"></script>
+
     <script>
-      // Check if the current page is the Login page
       if (window.location.pathname === "/login") {
         document.body.setAttribute("data-layout", "");
-        document.body.setAttribute("data-topbar", "");
-      } else {
-        /* Set the layout to Horizontal */
-        document.body.setAttribute("data-layout", "horizontal");
-        document.body.setAttribute("data-topbar", "dark");
       }
     </script>
-    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
