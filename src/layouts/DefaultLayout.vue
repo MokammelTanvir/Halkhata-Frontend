@@ -1,12 +1,42 @@
-<template>DefaultLayout</template>
+<template>
+  <div id="layout-wrapper">
+    <NavbarView />
+    <div class="hori-overlay"></div>
 
-<script>
-export default {
-  name: "DefaultLayout",
-  // Add your component options here
-};
+    <div class="main-content">
+      <div class="page-content">
+        <div class="container-fluid">
+          <!-- Content Here -->
+          <router-view v-slot="{ Component, route }">
+            <transition name="route" mode="out-in">
+              <div :key="route.name">
+                <component :is="Component" />
+              </div>
+            </transition>
+          </router-view>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import NavbarView from "@/components/Navbar.vue";
 </script>
 
-<style scoped>
-/* Add your component styles here */
+<style>
+.route-enter-from {
+  opacity: 0;
+  transform: translateX(10px);
+}
+.route-enter-active,
+.route-leave-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.3s ease-out;
+}
+.route-leave-to {
+  opacity: 0;
+  transform: translateX(10px);
+}
 </style>
