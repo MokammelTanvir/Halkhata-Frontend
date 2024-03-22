@@ -14,44 +14,20 @@
         alt="Header Avatar"
       />
       <span class="ms-2 d-none d-xl-inline-block user-item-desc">
-        <span class="user-name"
-          >Mokammel T. <i class="mdi mdi-chevron-down"></i
+        <span class="user-name">
+          {{ username }}. <i class="mdi mdi-chevron-down"></i
         ></span>
       </span>
     </button>
     <div class="dropdown-menu dropdown-menu-end pt-0">
-      <h6 class="dropdown-header">Welcome Mokammel T!</h6>
+      <h6 class="dropdown-header">Welcome {{ username }}</h6>
       <a class="dropdown-item" href="pages-profile.html"
         ><i
           class="mdi mdi-account-circle text-muted font-size-16 align-middle me-1"
         ></i>
-        <span class="align-middle">Profile</span></a
-      >
-      <a class="dropdown-item" href="apps-chat.html"
-        ><i
-          class="mdi mdi-message-text-outline text-muted font-size-16 align-middle me-1"
-        ></i>
-        <span class="align-middle">Messages</span></a
-      >
-      <a class="dropdown-item" href="apps-kanban-board.html"
-        ><i
-          class="mdi mdi-calendar-check-outline text-muted font-size-16 align-middle me-1"
-        ></i>
-        <span class="align-middle">Taskboard</span></a
-      >
-      <a class="dropdown-item" href="pages-faqs.html"
-        ><i
-          class="mdi mdi-lifebuoy text-muted font-size-16 align-middle me-1"
-        ></i>
-        <span class="align-middle">Help</span></a
-      >
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#"
-        ><i
-          class="mdi mdi-wallet text-muted font-size-16 align-middle me-1"
-        ></i>
-        <span class="align-middle">Balance : <b>$6951.02</b></span></a
-      >
+        <span class="align-middle">Profile</span>
+      </a>
+
       <a
         class="dropdown-item d-flex align-items-center"
         href="contacts-settings.html"
@@ -61,11 +37,8 @@
         <span class="align-middle">Settings</span
         ><span class="badgebg-success-subtle text-success ms-auto">New</span></a
       >
-      <a class="dropdown-item" href="auth-lockscreen-cover.html"
-        ><i class="mdi mdi-lock text-muted font-size-16 align-middle me-1"></i>
-        <span class="align-middle">Lock screen</span></a
-      >
-      <a class="dropdown-item" href="auth-signout-cover.html"
+
+      <a class="dropdown-item" href="#" @click.prevent="logout"
         ><i
           class="mdi mdi-logout text-muted font-size-16 align-middle me-1"
         ></i>
@@ -74,3 +47,31 @@
     </div>
   </div>
 </template>
+
+<script setup>
+/* All Library Import */
+import { useAuthStore } from "@/stores/auth";
+import { ref, reactive, inject } from "vue";
+import { useRouter } from "vue-router";
+
+/* All Instance */
+const swal = inject("$swal");
+const authStore = useAuthStore();
+const router = useRouter();
+
+/* All Variable */
+const username = authStore.getUserName || "admin";
+
+/* Methods */
+const logout = () => {
+  authStore.removeToken();
+  authStore.removeUserName();
+  swal({
+    icon: "success",
+    timer: 1000,
+    title: "Successfully Logout!",
+  });
+  router.push({ name: "login" });
+  document.body.setAttribute("data-layout", "");
+};
+</script>
