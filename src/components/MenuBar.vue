@@ -71,6 +71,34 @@
                   >
                 </div>
               </div>
+              <!-- Category End -->
+              <!-- Brand -->
+              <div class="dropdown">
+                <a
+                  class="dropdown-item dropdown-toggle arrow-none"
+                  href="#"
+                  id="topnav-projects"
+                  role="button"
+                >
+                  <span data-key="t-projects">Brand Management</span>
+                  <div class="arrow-down"></div>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="topnav-projects">
+                  <router-link
+                    :to="{ name: 'brand-index' }"
+                    class="dropdown-item"
+                    data-key="t-p-list"
+                    >Brand List</router-link
+                  >
+                  <router-link
+                    :to="{ name: 'brand-create' }"
+                    class="dropdown-item"
+                    data-key="t-create-new"
+                    >Create New</router-link
+                  >
+                </div>
+              </div>
+              <!-- Brand End -->
             </div>
           </li>
 
