@@ -2,20 +2,15 @@
   <div id="layout-wrapper">
     <NavbarView />
     <div class="hori-overlay"></div>
-
     <div class="main-content">
-      <div class="page-content">
-        <div class="container-fluid">
-          <!-- Content Here -->
-          <router-view v-slot="{ Component, route }">
-            <transition name="route" mode="out-in">
-              <div :key="route.name">
-                <component :is="Component" />
-              </div>
-            </transition>
-          </router-view>
-        </div>
-      </div>
+      <!-- Content Here -->
+      <router-view v-slot="{ Component, route }">
+        <transition name="route" mode="out-in">
+          <div :key="route.name">
+            <component :is="Component" />
+          </div>
+        </transition>
+      </router-view>
     </div>
   </div>
 </template>
@@ -27,16 +22,16 @@ import NavbarView from "@/components/Navbar.vue";
 <style>
 .route-enter-from {
   opacity: 0;
-  transform: translateX(10px);
+  transform: translateY(10px);
 }
+
 .route-enter-active,
 .route-leave-active {
-  opacity: 1;
-  transform: translateX(0);
-  transition: all 0.3s ease-out;
+  transition: all 0.2s ease-out;
 }
+
 .route-leave-to {
   opacity: 0;
-  transform: translateX(10px);
+  transform: translateY(10px);
 }
 </style>

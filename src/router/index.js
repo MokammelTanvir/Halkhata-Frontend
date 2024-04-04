@@ -16,6 +16,24 @@ const router = createRouter({
           name: "dashboard",
           component: () => import("@/views/Dashboard.vue"),
         },
+
+        /* Inventory */
+        /* category routes */
+        {
+          path: "/category",
+          name: "category-index",
+          component: () => import("@/views/Category/Index.vue"),
+        },
+        {
+          path: "/category/create",
+          name: "category-create",
+          component: () => import("@/views/Category/Create.vue"),
+        },
+        {
+          path: "/category/edit/:id",
+          name: "category-edit",
+          component: () => import("@/views/Category/Edit.vue"),
+        },
       ],
     },
     {

@@ -4,7 +4,7 @@
       <div class="d-flex active">
         <!-- LOGO -->
         <div class="navbar-brand-box">
-          <a href="index.html" class="logo logo-dark">
+          <a href="#" class="logo logo-dark">
             <span class="logo-sm">
               <img src="@/assets/images/logo-sm.svg" alt="" height="26" />
             </span>
@@ -14,7 +14,7 @@
             </span>
           </a>
 
-          <a href="index.html" class="logo logo-light">
+          <a href="#" class="logo logo-light">
             <span class="logo-sm">
               <img src="@/assets/images/logo-sm.svg" alt="" height="26" />
             </span>
@@ -72,13 +72,11 @@
         <ProfileView />
       </div>
     </div>
-    <SortDashboardView />
   </header>
 </template>
 
 <script setup>
 import MenuBarView from "./MenuBar.vue";
-import SortDashboardView from "./SortDashboard.vue";
 import NotificationView from "./Notifications.vue";
 import ProfileView from "./Profile.vue";
 </script>

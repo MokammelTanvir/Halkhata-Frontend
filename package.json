@@ -9,8 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hennge/vue3-pagination": "^1.0.17",
     "@vee-validate/rules": "^4.12.6",
     "axios": "^1.6.8",
+    "bootstrap": "^5.3.3",
+    "lodash": "^4.17.21",
     "pinia": "^2.1.7",
     "vee-validate": "^4.12.6",
     "vue": "^3.4.15",

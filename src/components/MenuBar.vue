@@ -4,9 +4,9 @@
       <div class="collapse navbar-collapse active" id="topnav-menu-content">
         <ul class="navbar-nav active">
           <li class="nav-item active">
-            <a
+            <router-link
               class="nav-link dropdown-toggle arrow-none active"
-              href="index.html"
+              :to="{ name: 'dashboard' }"
               id="topnav-dashboard"
               role="button"
               data-toggle="dropdown"
@@ -15,7 +15,7 @@
             >
               <i class="bx bx-home-circle icon"></i>
               <span data-key="t-dashboard">Dashboard</span>
-            </a>
+            </router-link>
           </li>
 
           <li class="nav-item dropdown">
@@ -45,128 +45,29 @@
               <div class="arrow-down"></div>
             </a>
             <div class="dropdown-menu" aria-labelledby="topnav-pages">
-              <a
-                href="apps-file-manager.html"
-                class="dropdown-item"
-                data-key="t-filemanager"
-                >File Manager</a
-              >
-
+              <!-- Category -->
               <div class="dropdown">
                 <a
                   class="dropdown-item dropdown-toggle arrow-none"
                   href="#"
-                  id="topnav-ecommerce"
+                  id="topnav-projects"
                   role="button"
                 >
-                  <span data-key="t-ecommerce">Ecommerce</span>
+                  <span data-key="t-projects">Category Management</span>
                   <div class="arrow-down"></div>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="topnav-ecommerce">
-                  <a
-                    href="ecommerce-products.html"
+                <div class="dropdown-menu" aria-labelledby="topnav-projects">
+                  <router-link
+                    :to="{ name: 'category-index' }"
                     class="dropdown-item"
-                    data-key="t-products"
-                    >Products</a
+                    data-key="t-p-list"
+                    >Category List</router-link
                   >
-                  <a
-                    href="ecommerce-product-detail.html"
+                  <router-link
+                    :to="{ name: 'category-create' }"
                     class="dropdown-item"
-                    data-key="t-product-detail"
-                    >Product Detail</a
-                  >
-                  <a
-                    href="ecommerce-orders.html"
-                    class="dropdown-item"
-                    data-key="t-orders"
-                    >Orders</a
-                  >
-                  <a
-                    href="ecommerce-customers.html"
-                    class="dropdown-item"
-                    data-key="t-customers"
-                    >Customers</a
-                  >
-                  <a
-                    href="ecommerce-cart.html"
-                    class="dropdown-item"
-                    data-key="t-cart"
-                    >Cart</a
-                  >
-                  <a
-                    href="ecommerce-checkout.html"
-                    class="dropdown-item"
-                    data-key="t-checkout"
-                    >Checkout</a
-                  >
-                  <a
-                    href="ecommerce-shops.html"
-                    class="dropdown-item"
-                    data-key="t-shops"
-                    >Shops</a
-                  >
-                  <a
-                    href="ecommerce-add-product.html"
-                    class="dropdown-item"
-                    data-key="t-add-product"
-                    >Add Product</a
-                  >
-                </div>
-              </div>
-              <div class="dropdown">
-                <a
-                  class="dropdown-item dropdown-toggle arrow-none"
-                  href="#"
-                  id="topnav-email"
-                  role="button"
-                >
-                  <span data-key="t-email">Email</span>
-                  <div class="arrow-down"></div>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="topnav-email">
-                  <a
-                    href="email-inbox.html"
-                    class="dropdown-item"
-                    data-key="t-inbox"
-                    >Inbox</a
-                  >
-                  <a
-                    href="email-read.html"
-                    class="dropdown-item"
-                    data-key="t-read-email"
-                    >Read Email</a
-                  >
-                </div>
-              </div>
-
-              <div class="dropdown">
-                <a
-                  class="dropdown-item dropdown-toggle arrow-none"
-                  href="#"
-                  id="topnav-contact"
-                  role="button"
-                >
-                  <span data-key="t-contacts">Contacts</span>
-                  <div class="arrow-down"></div>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="topnav-contact">
-                  <a
-                    href="contacts-grid.html"
-                    class="dropdown-item"
-                    data-key="t-user-grid"
-                    >User Grid</a
-                  >
-                  <a
-                    href="contacts-list.html"
-                    class="dropdown-item"
-                    data-key="t-user-list"
-                    >User List</a
-                  >
-                  <a
-                    href="contacts-settings.html"
-                    class="dropdown-item"
-                    data-key="t-user-settings"
-                    >User Settings</a
+                    data-key="t-create-new"
+                    >Create New</router-link
                   >
                 </div>
               </div>
