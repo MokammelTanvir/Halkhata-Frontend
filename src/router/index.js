@@ -69,6 +69,25 @@ const router = createRouter({
           component: () => import("@/views/Supplier/Edit.vue"),
         },
         /* supplier routes end */
+
+        /*CRM */
+        /* supplier routes */
+        {
+          path: "/customer",
+          name: "customer-index",
+          component: () => import("@/views/Customer/Index.vue"),
+        },
+        {
+          path: "/customer/create",
+          name: "customer-create",
+          component: () => import("@/views/Customer/Create.vue"),
+        },
+        {
+          path: "/customer/edit/:id",
+          name: "customer-edit",
+          component: () => import("@/views/Customer/Edit.vue"),
+        },
+        /* supplier routes end */
       ],
     },
     {

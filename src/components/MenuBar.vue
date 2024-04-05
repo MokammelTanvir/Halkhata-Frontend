@@ -194,47 +194,21 @@
                   id="topnav-pricing"
                   role="button"
                 >
-                  <span data-key="t-pricing">Pricing</span>
+                  <span data-key="t-pricing">Customers</span>
                   <div class="arrow-down"></div>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="topnav-pricing">
-                  <a
-                    href="pricing-basic.html"
+                  <router-link
+                    :to="{ name: 'customer-index' }"
                     class="dropdown-item"
-                    data-key="t-basic"
-                    >Basic</a
+                    data-key="t-p-list"
+                    >Customer List</router-link
                   >
-                  <a
-                    href="pricing-table.html"
+                  <router-link
+                    :to="{ name: 'customer-create' }"
                     class="dropdown-item"
-                    data-key="t-table"
-                    >table</a
-                  >
-                </div>
-              </div>
-
-              <div class="dropdown">
-                <a
-                  class="dropdown-item dropdown-toggle arrow-none"
-                  href="#"
-                  id="topnav-invoices"
-                  role="button"
-                >
-                  <span data-key="t-invoices">Invoices</span>
-                  <div class="arrow-down"></div>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="topnav-invoices">
-                  <a
-                    href="invoices-list.html"
-                    class="dropdown-item"
-                    data-key="t-invoice-list"
-                    >Invoice List</a
-                  >
-                  <a
-                    href="invoices-detail.html"
-                    class="dropdown-item"
-                    data-key="t-invoice-detail"
-                    >Invoice Detail</a
+                    data-key="t-create-new"
+                    >Create New</router-link
                   >
                 </div>
               </div>
