@@ -99,6 +99,33 @@
                 </div>
               </div>
               <!-- Brand End -->
+              <!-- Supplier -->
+              <div class="dropdown">
+                <a
+                  class="dropdown-item dropdown-toggle arrow-none"
+                  href="#"
+                  id="topnav-projects"
+                  role="button"
+                >
+                  <span data-key="t-projects">Supplier Management</span>
+                  <div class="arrow-down"></div>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="topnav-projects">
+                  <router-link
+                    :to="{ name: 'supplier-index' }"
+                    class="dropdown-item"
+                    data-key="t-p-list"
+                    >Supplier List</router-link
+                  >
+                  <router-link
+                    :to="{ name: 'supplier-create' }"
+                    class="dropdown-item"
+                    data-key="t-create-new"
+                    >Create New</router-link
+                  >
+                </div>
+              </div>
+              <!-- Supplier End -->
             </div>
           </li>
 

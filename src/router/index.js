@@ -52,6 +52,23 @@ const router = createRouter({
           component: () => import("@/views/Brand/Edit.vue"),
         },
         /* brand routes end */
+        /* supplier routes */
+        {
+          path: "/supplier",
+          name: "supplier-index",
+          component: () => import("@/views/Supplier/Index.vue"),
+        },
+        {
+          path: "/supplier/create",
+          name: "supplier-create",
+          component: () => import("@/views/Supplier/Create.vue"),
+        },
+        {
+          path: "/supplier/edit/:id",
+          name: "supplier-edit",
+          component: () => import("@/views/Supplier/Edit.vue"),
+        },
+        /* supplier routes end */
       ],
     },
     {
