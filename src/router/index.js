@@ -70,6 +70,24 @@ const router = createRouter({
         },
         /* supplier routes end */
 
+        /*HRM */
+        /* staff routes */
+        {
+          path: "/staff",
+          name: "staff-index",
+          component: () => import("@/views/Staff/Index.vue"),
+        },
+        {
+          path: "/staff/create",
+          name: "staff-create",
+          component: () => import("@/views/Staff/Create.vue"),
+        },
+        {
+          path: "/staff/edit/:id",
+          name: "staff-edit",
+          component: () => import("@/views/Staff/Edit.vue"),
+        },
+
         /*CRM */
         /* supplier routes */
         {

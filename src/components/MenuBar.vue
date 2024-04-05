@@ -141,6 +141,7 @@
               <div class="arrow-down"></div>
             </a>
             <div class="dropdown-menu" aria-labelledby="topnav-components">
+              <!-- Staff -->
               <div class="dropdown">
                 <a
                   class="dropdown-item dropdown-toggle arrow-none"
@@ -148,27 +149,21 @@
                   id="topnav-map"
                   role="button"
                 >
-                  <span data-key="t-maps">Employee</span>
+                  <span data-key="t-maps">Employee Management</span>
                   <div class="arrow-down"></div>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="topnav-map">
-                  <a
-                    href="maps-google.html"
+                  <router-link
+                    :to="{ name: 'staff-index' }"
                     class="dropdown-item"
-                    data-key="t-google"
-                    >Employee List</a
+                    data-key="t-p-list"
+                    >Staff List</router-link
                   >
-                  <a
-                    href="maps-vector.html"
+                  <router-link
+                    :to="{ name: 'staff-create' }"
                     class="dropdown-item"
-                    data-key="t-vector"
-                    >Create Employee</a
-                  >
-                  <a
-                    href="maps-leaflet.html"
-                    class="dropdown-item"
-                    data-key="t-leaflet"
-                    >Create New</a
+                    data-key="t-create-new"
+                    >Create New</router-link
                   >
                 </div>
               </div>
