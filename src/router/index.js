@@ -110,6 +110,13 @@ const router = createRouter({
           name: "expense-edit",
           component: () => import("@/views/Expense/Edit.vue"),
         },
+        /* expense routes end */
+        /* orders routes */
+        {
+          path: "/order",
+          name: "order-index",
+          component: () => import("@/views/Order/Index.vue"),
+        },
 
         /*HRM */
         /* staff routes */

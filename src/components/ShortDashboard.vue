@@ -1,3 +1,23 @@
+<script setup>
+/* All Imports */
+import { ref, onMounted, inject } from "vue";
+import { useDashboardStore } from "@/stores/dashboard";
+import { useRouter } from "vue-router";
+
+/* All Instance */
+const dashboardStore = useDashboardStore();
+const swal = inject("$swal");
+const router = useRouter();
+
+dashboardStore.swal = swal;
+/* All variables */
+/* All methods */
+
+/* Hooks and Computed */
+onMounted(() => {
+  dashboardStore.getDashboardInfo();
+});
+</script>
 <template>
   <div class="dash-content collapse show" id="dashtoggle" style="">
     <div class="container-fluid">
@@ -30,58 +50,60 @@
               <div class="row row-cols-xxl-6 row-cols-md-3 row-cols-1 g-0">
                 <div class="col">
                   <div class="mt-md-0 py-3 px-4 mx-2">
-                    <p class="text-white-50 mb-2 text-truncate">
-                      Campaign Sent
-                    </p>
-                    <h3 class="text-white mb-0">197</h3>
+                    <p class="text-white-50 mb-2 text-truncate">Brands</p>
+                    <h3 class="text-white mb-0">
+                      {{ dashboardStore.dashboardInfo.brand_count }}
+                    </h3>
                   </div>
                 </div>
                 <!-- end col -->
 
                 <div class="col">
                   <div class="mt-3 mt-md-0 py-3 px-4 mx-2">
-                    <p class="text-white-50 mb-2 text-truncate">
-                      Annual Profit
-                    </p>
-                    <h3 class="text-white mb-0">$489.4k</h3>
+                    <p class="text-white-50 mb-2 text-truncate">Categories</p>
+                    <h3 class="text-white mb-0">
+                      {{ dashboardStore.dashboardInfo.category_count }}
+                    </h3>
                   </div>
                 </div>
                 <!-- end col -->
 
                 <div class="col">
                   <div class="mt-3 mt-md-0 py-3 px-4 mx-2">
-                    <p class="text-white-50 mb-2 text-truncate">
-                      Lead Coversation
-                    </p>
-                    <h3 class="text-white mb-0">32.89%</h3>
+                    <p class="text-white-50 mb-2 text-truncate">Products</p>
+                    <h3 class="text-white mb-0">
+                      {{ dashboardStore.dashboardInfo.product_count }}
+                    </h3>
                   </div>
                 </div>
                 <!-- end col -->
 
                 <div class="col">
                   <div class="mt-3 mt-md-0 py-3 px-4 mx-2">
-                    <p class="text-white-50 mb-2 text-truncate">
-                      Sales Forecast
-                    </p>
-                    <h3 class="text-white mb-0">75.35%</h3>
+                    <p class="text-white-50 mb-2 text-truncate">Sales</p>
+                    <h3 class="text-white mb-0">
+                      {{ dashboardStore.dashboardInfo.sales_count }}
+                    </h3>
                   </div>
                 </div>
                 <!-- end col -->
 
                 <div class="col">
                   <div class="mt-3 mt-lg-0 py-3 px-4 mx-2">
-                    <p class="text-white-50 mb-2 text-truncate">
-                      Daily Average Income
-                    </p>
-                    <h3 class="text-white mb-0">$1,596.5</h3>
+                    <p class="text-white-50 mb-2 text-truncate">Customers</p>
+                    <h3 class="text-white mb-0">
+                      {{ dashboardStore.dashboardInfo.customer_count }}
+                    </h3>
                   </div>
                 </div>
                 <!-- end col -->
 
                 <div class="col">
                   <div class="mt-3 mt-lg-0 py-3 px-4 mx-2">
-                    <p class="text-white-50 mb-2 text-truncate">Annual Deals</p>
-                    <h3 class="text-white mb-0">2,659</h3>
+                    <p class="text-white-50 mb-2 text-truncate">Suppliers</p>
+                    <h3 class="text-white mb-0">
+                      {{ dashboardStore.dashboardInfo.supplier_count }}
+                    </h3>
                   </div>
                 </div>
                 <!-- end col -->

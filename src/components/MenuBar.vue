@@ -182,6 +182,28 @@
                 </div>
               </div>
               <!-- expense End -->
+
+              <!-- Sales -->
+              <div class="dropdown">
+                <a
+                  class="dropdown-item dropdown-toggle arrow-none"
+                  href="#"
+                  id="topnav-projects"
+                  role="button"
+                >
+                  <span data-key="t-projects">Sales History</span>
+                  <div class="arrow-down"></div>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="topnav-projects">
+                  <router-link
+                    :to="{ name: 'order-index' }"
+                    class="dropdown-item"
+                    data-key="t-p-list"
+                    >Sales</router-link
+                  >
+                </div>
+              </div>
+              <!-- Sales End -->
             </div>
           </li>
 
