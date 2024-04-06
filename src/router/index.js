@@ -69,6 +69,23 @@ const router = createRouter({
           component: () => import("@/views/Supplier/Edit.vue"),
         },
         /* supplier routes end */
+        /* product routes */
+        {
+          path: "/product",
+          name: "product-index",
+          component: () => import("@/views/Product/Index.vue"),
+        },
+        {
+          path: "/product/create",
+          name: "product-create",
+          component: () => import("@/views/Product/Create.vue"),
+        },
+        {
+          path: "/product/edit/:id",
+          name: "product-edit",
+          component: () => import("@/views/Product/Edit.vue"),
+        },
+        /* product routes end */
 
         /*HRM */
         /* staff routes */
