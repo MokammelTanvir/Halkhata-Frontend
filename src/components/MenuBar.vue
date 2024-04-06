@@ -154,6 +154,34 @@
                 </div>
               </div>
               <!-- product End -->
+
+              <!-- expense -->
+              <div class="dropdown">
+                <a
+                  class="dropdown-item dropdown-toggle arrow-none"
+                  href="#"
+                  id="topnav-projects"
+                  role="button"
+                >
+                  <span data-key="t-projects">Expense Management</span>
+                  <div class="arrow-down"></div>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="topnav-projects">
+                  <router-link
+                    :to="{ name: 'expense-index' }"
+                    class="dropdown-item"
+                    data-key="t-p-list"
+                    >Expense List</router-link
+                  >
+                  <router-link
+                    :to="{ name: 'expense-create' }"
+                    class="dropdown-item"
+                    data-key="t-create-new"
+                    >Create New</router-link
+                  >
+                </div>
+              </div>
+              <!-- expense End -->
             </div>
           </li>
 

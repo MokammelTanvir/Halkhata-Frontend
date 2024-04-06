@@ -87,6 +87,23 @@ const router = createRouter({
         },
         /* product routes end */
 
+        /* expense routes */
+        {
+          path: "/expense",
+          name: "expense-index",
+          component: () => import("@/views/Expense/Index.vue"),
+        },
+        {
+          path: "/expense/create",
+          name: "expense-create",
+          component: () => import("@/views/Expense/Create.vue"),
+        },
+        {
+          path: "/expense/edit/:id",
+          name: "expense-edit",
+          component: () => import("@/views/Expense/Edit.vue"),
+        },
+
         /*HRM */
         /* staff routes */
         {
