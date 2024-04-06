@@ -17,6 +17,13 @@ const router = createRouter({
           component: () => import("@/views/Dashboard.vue"),
         },
 
+        /*POS */
+        {
+          path: "/pos",
+          name: "pos-index",
+          component: () => import("@/views/POS/Index.vue"),
+        },
+
         /* Inventory */
         /* category routes */
         {

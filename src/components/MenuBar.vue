@@ -18,19 +18,19 @@
             </router-link>
           </li>
 
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle arrow-none"
-              href="#"
-              id="topnav-uielement"
+          <li class="nav-item">
+            <router-link
+              class="nav-link dropdown-toggle arrow-none active"
+              :to="{ name: 'pos-index' }"
+              id="topnav-dashboard"
               role="button"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
             >
               <i class="bx bx-cart icon"></i>
-              <span data-key="t-elements">POS</span>
-            </a>
+              <span data-key="t-dashboard">POS</span>
+            </router-link>
           </li>
 
           <li class="nav-item dropdown">
