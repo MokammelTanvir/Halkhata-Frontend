@@ -13,10 +13,12 @@
       </router-view>
     </div>
   </div>
+  <FooterView />
 </template>
 
 <script setup>
 import NavbarView from "@/components/Navbar.vue";
+import FooterView from "@/components/Footer.vue";
 </script>
 
 <style>
