@@ -223,6 +223,34 @@
                   >
                 </div>
               </div>
+              <!-- Staff End -->
+              <!-- salary -->
+              <div class="dropdown">
+                <a
+                  class="dropdown-item dropdown-toggle arrow-none"
+                  href="#"
+                  id="topnav-map"
+                  role="button"
+                >
+                  <span data-key="t-maps">Salary Management</span>
+                  <div class="arrow-down"></div>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="topnav-map">
+                  <router-link
+                    :to="{ name: 'salary-index' }"
+                    class="dropdown-item"
+                    data-key="t-p-list"
+                    >Salary List</router-link
+                  >
+                  <router-link
+                    :to="{ name: 'salary-create' }"
+                    class="dropdown-item"
+                    data-key="t-create-new"
+                    >Create New</router-link
+                  >
+                </div>
+              </div>
+              <!-- salary End -->
             </div>
           </li>
 

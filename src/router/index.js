@@ -121,6 +121,24 @@ const router = createRouter({
           name: "staff-edit",
           component: () => import("@/views/Staff/Edit.vue"),
         },
+        /* staff routes end */
+        /* salary routes */
+        {
+          path: "/salary",
+          name: "salary-index",
+          component: () => import("@/views/Salary/Index.vue"),
+        },
+        {
+          path: "/salary/create",
+          name: "salary-create",
+          component: () => import("@/views/Salary/Create.vue"),
+        },
+        {
+          path: "/salary/edit/:id",
+          name: "salary-edit",
+          component: () => import("@/views/Salary/Edit.vue"),
+        },
+        /* salary routes end */
 
         /*CRM */
         /* supplier routes */
