@@ -15,6 +15,12 @@
                 <p class="text-muted font-size-15 w-75 mx-auto mt-3 mb-0">
                   User Experience & Interface Design Strategy Saas Solution
                 </p>
+                <p class="text-muted font-size-15 w-75 mx-auto mt-3 mb-0">
+                  Admin: admin@gmail.com
+                </p>
+                <p class="text-muted font-size-15 w-75 mx-auto mt-3 mb-0">
+                  Pass: 1234
+                </p>
               </div>
             </div>
 
