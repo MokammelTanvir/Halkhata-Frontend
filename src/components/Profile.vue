@@ -21,12 +21,12 @@
     </button>
     <div class="dropdown-menu dropdown-menu-end pt-0">
       <h6 class="dropdown-header">Welcome {{ username }}</h6>
-      <a class="dropdown-item" href="pages-profile.html"
+      <router-link class="dropdown-item" :to="{ name: 'profile' }"
         ><i
           class="mdi mdi-account-circle text-muted font-size-16 align-middle me-1"
         ></i>
         <span class="align-middle">Profile</span>
-      </a>
+      </router-link>
 
       <a
         class="dropdown-item d-flex align-items-center"

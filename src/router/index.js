@@ -17,6 +17,18 @@ const router = createRouter({
           component: () => import("@/views/Dashboard.vue"),
         },
 
+        /* User Profile */
+        {
+          path: "/profile",
+          name: "profile",
+          component: () => import("@/views/Profile/Index.vue"),
+        },
+        {
+          path: "/profile/edit",
+          name: "profile-edit",
+          component: () => import("@/views/Profile/Edit.vue"),
+        },
+
         /*POS */
         {
           path: "/pos",
